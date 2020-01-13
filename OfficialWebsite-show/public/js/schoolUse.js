@@ -1,0 +1,762 @@
+/* jshint esversion: 6 */
+// 返回后台职位类别
+var join = "";
+// 分页初始页码
+var pageNum = 1;
+// 分页总页数
+var pageSizeNum = null;
+// 职位类别ID
+var baseJobId =
+  GetQueryValue1(window.location.href) === undefined
+    ? []
+    : [GetQueryValue1(window.location.href)];
+// 岗位名称
+var jobName = "";
+// 点击简历投递获取ID ,避免覆盖职位类别ID
+var JobId = [];
+// let Url = '192.168.5.143:8084/official';
+var data = sessionStorage.getItem("0");
+// 公共样式函数
+var commonalityFn = function() {
+  return $(function() {
+    $(".list-item").on("click", function() {
+      let parentArr = $(this)
+        .parent()
+        .parent()
+        .children();
+      if ($(this)[0].nextElementSibling.style.maxHeight == "") {
+        for (var a = 0; a < parentArr.length; a++) {
+          parentArr[a].children[1].style.cssText = "";
+        }
+        $(this)[0].nextElementSibling.style.cssText = "max-height:650px";
+      } else {
+        $(this)[0].nextElementSibling.style.cssText = "";
+      }
+    });
+    // 投递简历按钮
+    $(".sendBtn").on("click", function() {
+      JobId = [];
+      // 保存当前点击职位ID
+      JobId.push($(this)[0].id);
+      // 保存当前点击职位名称
+      jobName = $(this)
+        .parent()
+        .siblings()[0].children[0].innerText;
+      $(".resumeDivShow").fadeToggle();
+      $(".fillContent")[0].style.cssText = "top:0%;opacity:1";
+      setTimeout(function() {
+        $(".FormHead")[0].style.cssText = "top:0%;opacity:1";
+      }, 300);
+    });
+
+    // 鼠标进入职位头部条改变背景颜色
+    $(".deteilsContent").on("mouseover", function() {
+      var sb = $(this).siblings();
+      for (var i = 0; i < sb.length; i++) {
+        $(this).siblings()[i].children[0].style.cssText =
+          "background-color:#fff";
+      }
+      $(this).children()[0].style.cssText = "background-color:#f8f8f8";
+    });
+
+    // 鼠标离开职位头部条改变背景颜色
+    $(".list-item").on("mouseout", function() {
+      var sb = $(".list-item");
+      for (var i = 0; i < sb.length; i++) {
+        $(".list-item")[i].style.cssText = "background-color:#fff";
+      }
+    });
+
+    //  投递简历按钮状态改变
+    let sendbtnhover = $(".sendBtnTxt");
+    let imghover = $(".deliverBtn");
+    for (let s = 0; s < sendbtnhover.length; s++) {
+      sendbtnhover[s].addEventListener("mouseover", function() {
+        imghover[s].src = "../public/img/join/社招-btn02.jpg";
+      });
+      sendbtnhover[s].addEventListener("mouseout", function() {
+        imghover[s].src = "../public/img/join/社招-btn01.jpg";
+      });
+    }
+
+    $(".deliverBtn").hover(
+      function() {
+        $(this)[0].src = "../public/img/join/社招-btn02.jpg";
+      },
+      function() {
+        $(this)[0].src = "../public/img/join/社招-btn01.jpg";
+      }
+    );
+
+    //发送简历按钮
+    $(".sendButton").hover(
+      function() {
+        $(".sendButton")[0].children[0].src =
+          "../public/img/popup/投递弹窗_btn02.png";
+      },
+      function() {
+        $(".sendButton")[0].children[0].src =
+          "../public/img/popup/投递弹窗_btn01.png";
+      }
+    );
+  });
+};
+
+// 进入页面动画效果
+setTimeout(function() {
+  $(".headline-EN")[0].style.cssText = "opacity:1;margin-top: 0%;";
+}, 500);
+setTimeout(function() {
+  $(".headline-CN")[0].style.cssText = "opacity:1;margin-top: 0%;";
+}, 1000);
+setTimeout(function() {
+  $(".joinLists")[0].style.cssText = "opacity:1;margin-top:5%";
+}, 1500);
+
+function GetQueryValue1(queryName) {
+  var re = queryName.split("?");
+  if (re.length > 1) {
+    var r = re[1].split("=");
+    return r[1];
+  }
+}
+
+// 进入页面初始化数据
+$.ajax({
+  contentType: "application/json",
+  type: "POST",
+  url: `http://${Url}/web/recruit/showRecruitment`,
+  dataType: "json",
+  data: JSON.stringify({
+    baseJobId, //获取url,调用方法获取ID
+    keyWord: join,
+    pageNo: 1,
+    recType: 1
+  }),
+  success: function(response) {
+    let dataList = response.data.pageData;
+    pageSizeNum = response.data.totalPage;
+    $(".totalPage").html(response.data.totalPage);
+    // 生成数据列表
+    for (let i = 0; i < dataList.length; i++) {
+      $(".deteilsList").append(`
+            <div class="deteilsContent">
+                <div class="list-item">
+                    <p class="postName">
+                        <span class="HotImage"  style="opacity:${
+                          dataList[i].recTag == true ? 1 : 0
+                        }">
+                            <img src="../public/img/join/社招-急icon.png">
+                        </span>
+                        <span class="postItem">
+                            ${dataList[i].jobName}
+                        </span>
+                    </p>
+                    <p class="postSort">${dataList[i].baseJobName}</p>
+                    <p class="postNumber">${dataList[i].recNum}</p>
+                </div>
+                <div class="postContent">
+                    <p class="contentText" id="contentText${i}"></p>
+                    <div class="sendBtn" id="${dataList[i].baseJobId}">
+                      <span class="sendBtnTxt">简历投递</span>
+                      <img class="deliverBtn" src="../public/img/join/社招-btn01.jpg">
+                    </div>
+                </div>
+            </div>
+            `);
+      $(`#contentText${i}`).html(
+        dataList[i].recRequire.replace(/\n/g, "<br/>")
+      );
+    }
+    commonalityFn();
+  }
+});
+// 进入页面初始化职位类别
+$.ajax({
+  type: "GET",
+  url: `http://${Url}/web/recruit/showBaseJob`,
+  success: function(response) {
+    var JobId = GetQueryValue1(window.location.href);
+    JobId = Number(JobId);
+    for (let cls = 0; cls < response.data.length; cls++) {
+      $(".positionList").append(`
+                <span class="theFirstTxte-item" id="${response.data[cls].id}">${response.data[cls].baseJobName}</span>
+            `);
+      if (JobId === response.data[cls].id) {
+        $(`#${JobId}`)[0].style.cssText = "color:#2dadfe";
+        $(".positionList").children()[0].style.cssText = "color:#282828";
+      }
+      if (response.data[cls].id == null) {
+        $(".theFirstTxte-item")[0].style.cssText = "color:#2dadfe";
+      }
+    }
+
+    // 职位类别点击搜索功能
+    $(".theFirstTxte-item").on("click", function() {
+      baseJobId = [];
+      pageNum = 1;
+      if ($(this)[0].id == "null") {
+        baseJobId = [];
+      } else {
+        baseJobId.push(Number($(this)[0].id));
+      }
+      join = $("#searchInput").val();
+      // join = $(this).html()
+      // 职位类别点击后变色
+      $(this)[0].style.cssText = "color:#2dadfe";
+      for (let sr = 0; sr < $(this).siblings().length; sr++) {
+        $(this).siblings()[sr].style.cssText = "color:#282828";
+      }
+      // 点击职位类别后重新拉去数据生成列表
+      $.ajax({
+        contentType: "application/json",
+        type: "POST",
+        url: `http://${Url}/web/recruit/showRecruitment`,
+        dataType: "json",
+        data: JSON.stringify({
+          baseJobId,
+          keyWord: join,
+          pageNo: pageNum,
+          recType: 1
+        }),
+        success: function(response) {
+          let dataList = response.data.pageData;
+          pageSizeNum = response.data.totalPage;
+          $(".totalPage").html(response.data.totalPage);
+          $(".currntPage").html(response.data.currntPage);
+          $(".deteilsList").html("");
+          // 生成数据列表
+          for (let i = 0; i < dataList.length; i++) {
+            $(".deteilsList").append(`
+                            <div class="deteilsContent">
+                                <div class="list-item">
+                                    <p class="postName">
+                                        <span class="HotImage"  style="opacity:${
+                                          dataList[i].recTag == true ? 1 : 0
+                                        }">
+                                            <img src="../public/img/join/社招-急icon.png">
+                                        </span>
+                                        <span class="postItem">
+                                            ${dataList[i].jobName}
+                                        </span>
+                                    </p>
+                                    <p class="postSort">${
+                                      dataList[i].baseJobName
+                                    }</p>
+                                    <p class="postNumber">${
+                                      dataList[i].recNum
+                                    }</p>
+                                </div>
+                                <div class="postContent">
+                                    <p class="contentText" id="contentText${i}"></p>
+                                    <div class="sendBtn" id="${
+                                      dataList[i].baseJobId
+                                    }">
+                                        <span class="sendBtnTxt">简历投递</span>
+                                        <img class="deliverBtn" src="../public/img/join/社招-btn01.jpg">
+                                    </div>
+                                </div>
+                            </div>
+                            `);
+            $(`#contentText${i}`).html(
+              dataList[i].recRequire.replace(/\n/g, "<br/>")
+            );
+          }
+          commonalityFn();
+        }
+      });
+    });
+  }
+});
+
+// 简历投递窗口 标题和TIPS
+$.ajax({
+  type: "GET",
+  url: `http://${Url}/backstage/joinUs/loadResumeTemplate`,
+  dataType: "json",
+  data: {
+    type: 1
+  },
+  success: function(response) {
+    $(".formHeadText")[0].innerHTML = response.data.title;
+    $(".TipsTxt")[0].innerHTML = response.data.tips;
+  }
+});
+// 分页按钮
+$(".prev").on("click", function() {
+  pageNum--;
+  if (pageNum <= 1) {
+    pageNum = 1;
+  }
+  $(".deteilsList").html("");
+  $.ajax({
+    contentType: "application/json",
+    type: "POST",
+    url: `http://${Url}/web/recruit/showRecruitment`,
+    dataType: "json",
+    data: JSON.stringify({
+      baseJobId,
+      keyWord: join,
+      pageNo: pageNum,
+      recType: 1
+    }),
+    success: function(res) {
+      $(".currntPage").html(res.data.currntPage);
+      // 生成数据列表
+      for (let i = 0; i < res.data.pageData.length; i++) {
+        $(".deteilsList").append(`
+                    <div class="deteilsContent">
+                        <div class="list-item">
+                            <p class="postName">
+                                <span class="HotImage"  style="opacity:${
+                                  res.data.pageData[i].recTag == true ? 1 : 0
+                                }">
+                                    <img src="../public/img/join/社招-急icon.png">
+                                </span>
+                                <span class="postItem">
+                                    ${res.data.pageData[i].jobName}
+                                </span>
+                            </p>
+                            <p class="postSort">${
+                              res.data.pageData[i].baseJobName
+                            }</p>
+                            <p class="postNumber">${
+                              res.data.pageData[i].recNum
+                            }</p>
+                        </div>
+                        <div class="postContent">
+                            <p class="contentText" id="contentText${i}"></p>
+                            <div class="sendBtn" id="${
+                              res.data.pageData[i].baseJobId
+                            }">
+                                <span class="sendBtnTxt">简历投递</span>
+                                <img class="deliverBtn" src="../public/img/join/社招-btn01.jpg">
+                            </div>
+                        </div>
+                    </div>
+            `);
+        $(`#contentText${i}`).html(
+          res.data.pageData[i].recRequire.replace(/\n/g, "<br/>")
+        );
+      }
+
+      commonalityFn();
+    }
+  });
+});
+$(".next").on("click", function() {
+  pageNum++;
+  if (pageNum > pageSizeNum) {
+    pageNum = pageSizeNum;
+  }
+  $(".deteilsList").html("");
+  $.ajax({
+    contentType: "application/json",
+    type: "POST",
+    url: `http://${Url}/web/recruit/showRecruitment`,
+    dataType: "json",
+    data: JSON.stringify({
+      baseJobId,
+      keyWord: join,
+      pageNo: pageNum,
+      recType: 1
+    }),
+    success: function(resn) {
+      if (pageNum >= resn.data.totalPage) {
+        pageNum = resn.data.totalPage;
+      }
+      pageSizeNum = resn.data.totalPage;
+      $(".currntPage").html(resn.data.currntPage);
+      $(".totalPage").html(resn.data.totalPage);
+      // 生成数据列表
+      for (let i = 0; i < resn.data.pageData.length; i++) {
+        $(".deteilsList").append(`
+                    <div class="deteilsContent">
+                        <div class="list-item">
+                            <p class="postName">
+                                <span class="HotImage"  style="opacity:${
+                                  resn.data.pageData[i].recTag == true ? 1 : 0
+                                }">
+                                    <img src="../public/img/join/社招-急icon.png">
+                                </span>
+                                <span class="postItem">
+                                    ${resn.data.pageData[i].jobName}
+                                </span>
+                            </p>
+                            <p class="postSort">${
+                              resn.data.pageData[i].baseJobName
+                            }</p>
+                            <p class="postNumber">${
+                              resn.data.pageData[i].recNum
+                            }</p>
+                        </div>
+                        <div class="postContent">
+                            <p class="contentText" id="contentText${i}"></p>
+                            <div class="sendBtn" id="${
+                              resn.data.pageData[i].baseJobId
+                            }">
+                                <span class="sendBtnTxt">简历投递</span>
+                                <img class="deliverBtn" src="../public/img/join/社招-btn01.jpg">
+                            </div>
+                        </div>
+                    </div>
+            `);
+        $(`#contentText${i}`).html(
+          resn.data.pageData[i].recRequire.replace(/\n/g, "<br/>")
+        );
+      }
+      commonalityFn();
+    }
+  });
+});
+
+//动态生成轮播图
+// $.ajax({
+//     contentType: 'application/json',
+//     type: "GET",
+//     url: `http://${Url}/web/material/joinUs`,
+//     dataType: "json",
+//     data: {
+//         type: data
+//     },
+//     success: function (response) {
+//         // 初始化移动距离和下标
+//         let distance = 0
+//         let backImg = 0
+
+//         // 动态生成轮播图片和分页器
+//         for (let m = 0; m < response.data.length; m++) {
+//             $('.marginDiv').append(`
+//         <img src="${response.data[m].url}" id = '${response.data[m].id}'>
+//     `)
+//             $('.whirligigBack').append(`
+//                 <img src="${response.data[m].url}" id = '${response.data[m].id}'>
+//             `)
+
+//             $('.dotImge').append(`
+//         <li id="dot${m}" class="dotBtn"><img src="../public/img/join/dot-01.png"></li>
+//     `)
+//         }
+
+//         // 轮播图左按钮
+//         // $('.leftBtn').on('click', function () {
+//         //     //点击前先清除分页器样式
+//         //     for (let l = 0; l < $('.dotImge li').length; l++) {
+//         //         $('.dotImge li')[l].children[0].src = "../public/img/join/dot-01.png"
+//         //     }
+//         //     $('.dotImge')[0].children[backImg].childNodes[0].src = "../public/img/join/dot-01.png"
+//         //     distance += 100
+//         //     $('.marginDiv')[0].style.cssText = `margin-left:-${distance}%`;
+//         //     // 背景大图
+//         //     $('.whirligigBack')[0].style.cssText = `margin-left:-${distance}%`;
+//         //     backImg++
+//         //     if (backImg + 1 > response.data.length) {
+//         //         distance = 0
+//         //         backImg = 0
+//         //         $('.marginDiv')[0].style.cssText = `margin-left:0%`;
+//         //         $('.whirligigBack')[0].style.cssText = `margin-left:-${distance}%`;
+//         //         // $('.backImage')[0].src = response.data[backImg].url
+//         //         $('.dotImge')[0].children[backImg].childNodes[0].src = "../public/img/join/dot-02.png"
+//         //     } else {
+//         //         // $('.backImage')[0].src = response.data[backImg].url
+//         //         $('.dotImge')[0].children[backImg].childNodes[0].src = "../public/img/join/dot-02.png"
+//         //     }
+//         // })
+//         // 轮播图右按钮
+//         // $('.rightBtn').on('click', function () {
+//         //     //点击前先清除分页器样式
+//         //     for (let l = 0; l < $('.dotImge li').length; l++) {
+//         //         $('.dotImge li')[l].children[0].src = "../public/img/join/dot-01.png"
+//         //     }
+//         //     $('.dotImge')[0].children[backImg].childNodes[0].src = "../public/img/join/dot-01.png"
+//         //     distance -= 100
+//         //     $('.marginDiv')[0].style.cssText = `margin-left:-${distance}%`;
+//         //     //背景大图
+//         //     $('.whirligigBack')[0].style.cssText = `margin-left:-${distance}%`;
+//         //     backImg--
+//         //     if (distance < 0) {
+//         //         distance = response.data.length * 100 - 100
+//         //         backImg = response.data.length - 1
+//         //         $('.marginDiv')[0].style.cssText = `margin-left:-${distance}%`;
+//         //         $('.whirligigBack')[0].style.cssText = `margin-left:-${distance}%`;
+//         //         // $('.backImage')[0].src = imgList[backImg]
+//         //         $('.dotImge')[0].children[backImg].childNodes[0].src = "../public/img/join/dot-02.png"
+//         //     } else {
+//         //         // $('.backImage')[0].src = imgList[backImg]
+//         //         $('.dotImge')[0].children[backImg].childNodes[0].src = "../public/img/join/dot-02.png"
+//         //     }
+//         // })
+
+//         // 初始化轮播图分页器默认样式
+//         // $('.dotImge')[0].children[0].childNodes[0].src = "../public/img/join/dot-02.png"
+//         //! 轮播图分页器点击事件
+//         // $('.dotBtn').on('click', function () {
+//         //     distance = $(this).index() * 100
+//         //     backImg = $(this).index()
+//         //     $('.marginDiv')[0].style.cssText = `margin-left:-${$(this).index() * 100}%`;
+//         //     $('.whirligigBack')[0].style.cssText = `margin-left:-${$(this).index() * 100}%`;
+//         //     $(this)[0].children[0].src = '../public/img/join/dot-02.png'
+//         //     for (let i = 0; i < $(this).siblings().length; i++) {
+//         //         $(this).siblings()[i].children[0].src = '../public/img/join/dot-01.png'
+//         //     }
+//         // })
+//     }
+// })
+
+// 分页器点击时间
+// $('.dotImge li').on('click', function () {
+//     let dotNub = $(this).index()
+// })
+
+$(".hidDiv")[0].style.cssText = "height:47px ";
+// 搜索功能
+$(".searchBtn").on("click", function() {
+  join = $("#searchInput").val();
+  $(".deteilsList").html("");
+  $.ajax({
+    contentType: "application/json",
+    type: "POST",
+    url: `http://${Url}/web/recruit/showRecruitment`,
+    dataType: "json",
+    data: JSON.stringify({
+      baseJobId,
+      keyWord: join,
+      pageNo: 1,
+      recType: 1
+    }),
+    success: function(response) {
+      let dataList = response.data.pageData;
+      pageSizeNum = response.data.totalPage;
+      $(".totalPage").html(response.data.totalPage);
+      // 生成数据列表
+      for (let i = 0; i < dataList.length; i++) {
+        $(".deteilsList").append(`
+                    <div class="deteilsContent">
+                        <div class="list-item">
+                            <p class="postName">
+                                <span class="HotImage"  style="opacity:${
+                                  dataList[i].recTag == true ? 1 : 0
+                                }">
+                                    <img src="../public/img/join/社招-急icon.png">
+                                </span>
+                                <span class="postItem">
+                                    ${dataList[i].jobName}
+                                </span>
+                            </p>
+                            <p class="postSort">${dataList[i].baseJobName}</p>
+                            <p class="postNumber">${dataList[i].recNum}</p>
+                        </div>
+                        <div class="postContent">
+                            <p class="contentText" id="contentText${i}"></p>
+                            <div class="sendBtn" id="${dataList[i].baseJobId}">
+                                <span class="sendBtnTxt">简历投递</span>
+                                <img class="deliverBtn" src="../public/img/join/社招-btn01.jpg">
+                            </div>
+                        </div>
+                    </div>
+                    `);
+        $(`#contentText${i}`).html(
+          dataList[i].recRequire.replace(/\n/g, "<br/>")
+        );
+      }
+      commonalityFn();
+    }
+  });
+});
+// 搜索框回车功能
+$(".searchWindow").keydown(function(event) {
+  if (event.keyCode === 13) {
+    join = $("#searchInput").val();
+    $(".deteilsList").html("");
+    $.ajax({
+      contentType: "application/json",
+      type: "POST",
+      url: `http://${Url}/web/recruit/showRecruitment`,
+      dataType: "json",
+      data: JSON.stringify({
+        baseJobId,
+        keyWord: join,
+        pageNo: 1,
+        recType: 1
+      }),
+      success: function(response) {
+        let dataList = response.data.pageData;
+        pageSizeNum = response.data.totalPage;
+        $(".totalPage").html(response.data.totalPage);
+        // 生成数据列表
+        for (let i = 0; i < dataList.length; i++) {
+          $(".deteilsList").append(`
+                    <div class="deteilsContent">
+                        <div class="list-item">
+                            <p class="postName">
+                                <span class="HotImage"  style="opacity:${
+                                  dataList[i].recTag == true ? 1 : 0
+                                }">
+                                <img src="../public/img/join/社招-急icon.png">
+                                </span>
+                                <span class="postItem">
+                                    ${dataList[i].jobName}
+                                </span>
+                            </p>
+                            <p class="postSort">${dataList[i].baseJobName}</p>
+                            <p class="postNumber">${dataList[i].recNum}</p>
+                        </div>
+                        <div class="postContent">
+                            <p class="contentText" id="contentText${i}"></p>
+                            <div class="sendBtn" id="${dataList[i].baseJobId}">
+                                <span class="sendBtnTxt">简历投递</span>
+                                <img class="deliverBtn" src="../public/img/join/社招-btn01.jpg">
+                            </div>
+                        </div>
+                    </div>
+                    `);
+          $(`#contentText${i}`).html(
+            dataList[i].recRequire.replace(/\n/g, "<br/>")
+          );
+        }
+        commonalityFn();
+      }
+    });
+  }
+});
+// 关闭简历提交框
+$(".offForm").on("click", function() {
+  // 清空内容
+  $(".resName").val("");
+  $(".resPhone").val("");
+  $(".resMail").val("");
+  $(".resQQ").val("");
+  $(".file-upload").val("");
+  $(".clickOnloadText").html("点击上传");
+  // 关闭
+  $(".resumeDivShow").fadeToggle();
+  $(".FormHead")[0].style.cssText = "top:20%;opacity:0";
+  setTimeout(function() {
+    $(".fillContent")[0].style.cssText = "top:50%;opacity:0";
+  }, 300);
+});
+//发送提交简历信息
+$(".sendButton").click(function() {
+  var sendData = new FormData();
+  sendData.append("baseJobId", JobId);
+  sendData.append("jobName", jobName);
+  sendData.append("file", $(".file-upload")[0].files[0]);
+  sendData.append("resName", $(".resName").val());
+  sendData.append("resPhone", $(".resPhone").val());
+  sendData.append("resQQ", $(".resQQ").val());
+  sendData.append("resMail", $(".resMail").val());
+  sendData.append("recType", 1);
+  if ($(".resName").val() == "") {
+    $(".validatorName")[0].style.cssText = "opacity:1";
+    setTimeout(() => {
+      $(".validatorName")[0].style.cssText = "opacity:0";
+    }, 2000);
+  } else if ($(".resPhone").val() == "") {
+    $(".validatorPhone")[0].style.cssText = "opacity:1";
+    setTimeout(() => {
+      $(".validatorPhone")[0].style.cssText = "opacity:0";
+    }, 2000);
+  } else if ($(".resMail").val() == "") {
+    $(".validatorEmall")[0].style.cssText = "opacity:1";
+    setTimeout(() => {
+      $(".validatorEmall")[0].style.cssText = "opacity:0";
+    }, 2000);
+  } else if ($(".resQQ").val() == "") {
+    $(".validatorQQ")[0].style.cssText = "opacity:1";
+    setTimeout(() => {
+      $(".validatorQQ")[0].style.cssText = "opacity:0";
+    }, 2000);
+  } else if ($(".file-upload")[0].files.length < 1) {
+    $(".validatorResume")[0].style.cssText = "opacity:1";
+    setTimeout(() => {
+      $(".validatorResume")[0].style.cssText = "opacity:0";
+    }, 2000);
+  } else {
+    $("#loading").fadeIn();
+    $.ajax({
+      dataType: "json",
+      type: "POST",
+      url: `http://${Url}/web/recruit/sendResume`,
+      data: sendData,
+      contentType: false,
+      processData: false,
+      xhrFields: {
+        withCredentials: true
+      },
+
+      success: function(response, status, xhr) {
+        if (response.code === 200) {
+          $("#loading").fadeOut();
+          $(".msgContent").html(response.msg);
+          $(".msgText").fadeIn();
+          // setTimeout(() => {
+          //     $('.resumeDivShow').hide()
+          //     location.reload();
+          // }, 2000);
+        } else {
+          $(".msgContent").html(response.msg);
+          $(".msgText").fadeIn();
+          $("#loading").fadeOut();
+        }
+      },
+      error: function(e) {
+        alert(e.responseJSON.msg);
+      }
+    });
+  }
+});
+//如果已长传简历,显示的文字
+$(".file-upload").change(function(val) {
+  $(".clickOnloadText").html(
+    "已上传文件:" + $(".file-upload")[0].files[0].name
+  );
+});
+
+$(".item-txt")[3].style.cssText = "color:#2dacfe;";
+
+$(".hidDiv").on("mouseenter", function() {
+  $(".hidDiv")[0].style.cssText = "height:47px";
+});
+$(".hidDiv").on("mouseleave", function() {
+  $(".hidDiv")[0].style.cssText = "height:47px";
+});
+$(".joinList")[1].style.cssText = "color:#2dacfe;";
+
+$(".borderBottom4")[0].style.cssText = " display: block";
+
+// 后台返回提示窗口
+$(".closeMsgDiv").on("click", function() {
+  $(".msgText").fadeOut();
+});
+
+function fileChange(target) {
+  //检测上传文件的类型
+  var imgName = document.all.up_file.value;
+  var ext, idx;
+
+  idx = imgName.lastIndexOf(".");
+  if (idx != -1) {
+    ext = imgName.substr(idx + 1).toUpperCase();
+    ext = ext.toLowerCase();
+    // alert("ext="+ext);
+    if (
+      ext != "doc" &&
+      ext != "docx" &&
+      ext != "pdf" &&
+      ext != "jpg" &&
+      ext != "png" &&
+      ext != "jpeg" &&
+      ext != "pptx"
+    ) {
+      // document.all.submit_upload.disabled = true;
+      $(".validatorResume").html(
+        "只允许上传doc、docx、pdf、jpg、png、jpeg、pptx格式文件"
+      );
+      $(".validatorResume")[0].style.cssText = "opacity:1";
+      setTimeout(() => {
+        $(".validatorResume")[0].style.cssText = "opacity:0";
+      }, 5000);
+      return;
+    }
+  }
+}

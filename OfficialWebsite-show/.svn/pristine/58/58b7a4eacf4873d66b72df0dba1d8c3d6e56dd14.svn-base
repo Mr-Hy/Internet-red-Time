@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>止观互娱-探觅止观</title>
+    <link rel="stylesheet" href="../public/css/explorechange.css">
+    <link rel="stylesheet" href="../public/css/header.css">
+    <link rel="stylesheet" type="text/css" href="../public/css/contactShowDiv.css">
+    <link rel="stylesheet" href="../public/css/foolter.css">
+</head>
+
+<!-- 顶部导航栏引入 -->
+
+<body style="position: relative;">
+    <header style="width: 100%;z-index: 2888;position: fixed;top: 0px;">
+        <div class="joinDivShow">
+            <div class="contactDiv">
+                <div class="headTop">
+                    <img style="position: absolute;left: 0;" src="../public/img/contactway/01.png">
+                    <img id="closeDiv" style="position: absolute;left:0;cursor: pointer;"
+                        src="../public/img/contactway/02.png">
+                </div>
+                <div class="contentDiv">
+                    <img src="../public/img/contactway/03.png">
+                    <div class="QRcode">
+                        <img class="erweima" src="">
+                    </div>
+                    <p class="QRtext">止观互娱微信公众号</p>
+                    <div class="QRemall">
+                        <div class="qrEmall">
+                            <p class="businessEmail"></p>
+                            <p class="eliteEmail"></p>
+                            <p class="recruitEmail"></p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="header">
+            <a class="logImge" href="../index.html">
+                <img src="../public/img/logo-导航栏-小.png" alt />
+            </a>
+            <div class="header-label">
+                <div class="headText" id="headTxt1">
+                    <div class="head-item">
+                        <a class="item-txt" href="../index.html">首页</a>
+                        <div class="borderBottom"></div>
+                    </div>
+                </div>
+                <div class="headText" id="headTxt2">
+                    <div class="head-item">
+                        <a class="item-txt" href="../src/AboutCompany.html">关于止观</a>
+                        <div class="borderBottom2"></div>
+                    </div>
+                </div>
+                <div class="headText" id="headTxt3">
+                    <div class="head-item">
+                        <a class="item-txt" href="../src/productCenter.html">产品中心</a>
+                        <div class="borderBottom3"></div>
+                    </div>
+                </div>
+                <div class="headText" id="headTxt4">
+                    <div class="head-item" id="head-hover">
+                        <span class="item-txt" id="joinBtn" href="javascrpt:;">加入止观</span>
+                        <div class="borderBottom4"></div>
+                    </div>
+                </div>
+                <div class="hidDiv">
+                    <div class="hidWindow">
+                        <p>
+                            <a class="joinList" href="../src/JoinUse.html">社会招聘</a>
+                        </p>
+                        <p style="margin-left: 20%;">
+                            <a class="joinList" href="../src/schoolWebPortal.html">校园招聘</a>
+                        </p>
+                    </div>
+                </div>
+                <div class="headText" id="headTxt5">
+                    <div class="head-item" id="showWindow">
+                        <span class="item-txt" href="javascrpt:;">联系我们</span>
+                        <div class="borderBottom5"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section>
+        <div class="photowall">
+            <div class="logImage-item">
+                <img src="../public/img/explore/标题 (1).png">
+            </div>
+            <div class="backgroundImg">
+                <img style="z-index: -1;" src="../public/img/explore/backBlue.jpg">
+                <div class="backImage">
+                    <div class="leftArrows">
+                        <img src="../public/img/explore/left.png">
+                    </div>
+                    <div class="rightArrows">
+                        <img src="../public/img/explore/right.png">
+                    </div>
+
+                    <div class="item-img-01">
+                        <img class="photo-01" src="">
+                    </div>
+
+                    <div class="item-img-02">
+                        <img class="photo-02" src="">
+                    </div>
+
+                    <div class="item-img-03">
+                        <img class="photo-03" src="">
+                    </div>
+
+                    <div class="item-img-04">
+                        <img class="photo-04" src="">
+                    </div>
+
+                    <div class="item-img-05">
+                        <img class="photo-05" src="">
+                    </div>
+
+                    <div class="item-img-06">
+                        <img class="photo-06" src="">
+                    </div>
+
+                    <div class="item-img-07">
+                        <img class="photo-07" src="">
+                    </div>
+
+                    <div class="item-img-08">
+                        <img class="photo-08" src="">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <footer style="margin-top:200px;width: 100%;">
+        <div class="footerText">
+            <div class="footerDiv">
+                <div class="footerImg">
+                    <img src="../public/img/logofooter.png">
+                </div>
+                <div class="text-align">
+                    <div class="text-height">
+                        <p>成都止观互娱科技有限公司 版权所有</p>
+                        <p>公司电话：028-65225090 | 公司地址：成都高新区锦晖西一街99号布鲁明顿广场1栋2单元701</p>
+                        <p>川网文 [2016] 5898-193号 | <a href="http://beian.miit.gov.cn" style="color:#e8e8e8">蜀ICP备16035972号-1</a> 文网游备字(2017) M-RPG 0345号 | 经营许可证编号 川B2-20160380 | <a style="color:#e8e8e8"
+                            href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=51019002002260 ">公安备案号</a></p>
+                        <p>本公司游戏产品适合18岁以上成年人使用（家长监护） 自律公约</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="../public/js/Url.js"></script>
+    <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="../public/js/explorechange.js"></script>
+    <script src="../public/js/AllSrc.js"></script>
+    <script src="../public/js/header.js"></script>
+    <script>
+        // let Url = '192.168.5.143:8084/official';
+        $.ajax({
+            type: "GET",
+            url: `http://${Url}/web/material/explore`,
+            data: {
+                type: src
+            },
+            success: function (res) {
+                if (res.data.length === 0) {
+                } else {
+                    let data = res.data;
+                    let index = 0;
+                    // 初始第一张图
+                    $('.photo-01')[0].src = data[index].vertical01
+                    // 初始第二张图
+                    $('.photo-02')[0].src = data[index].vertical02
+                    // 初始第三张图
+                    $('.photo-03')[0].src = data[index].vertical03
+                    // 初始第四张图
+                    $('.photo-04')[0].src = data[index].across01
+                    // 初始第五张图
+                    $('.photo-05')[0].src = data[index].across02
+                    // 初始第六张图
+                    $('.photo-06')[0].src = data[index].across03
+                    // 初始第七张图
+                    $('.photo-07')[0].src = data[index].vertical04
+                    // 初始第八张图
+                    $('.photo-08')[0].src = data[index].vertical05
+
+                    let Index = 0;
+                    // 左箭头按钮
+                    $('.leftArrows').on('click', function () {
+                        $('.item-img-01')[0].style.cssText = "opacity: 0;transform: rotate(-28deg);"
+                        $('.item-img-02')[0].style.cssText = "opacity: 0;transform: rotate(-14deg);"
+                        $('.item-img-03')[0].style.cssText = "opacity: 0;transform: rotate(8deg);"
+                        $('.item-img-04')[0].style.cssText = "opacity: 0;transform: rotate(-25deg);"
+                        $('.item-img-05')[0].style.cssText = "opacity: 0;transform: rotate(25deg);"
+                        $('.item-img-06')[0].style.cssText =
+                            "opacity: 0;transform: rotate(-15deg);"
+                        $('.item-img-07')[0].style.cssText = "opacity: 0;transform: rotate(23deg);"
+                        $('.item-img-08')[0].style.cssText = "opacity: 0;transform: rotate(15deg);"
+                        setTimeout(function () {
+                            $('.item-img-01')[0].style.cssText =
+                                "opacity: 1;opacity: 1;transform: rotate(-33deg)"
+                            $('.item-img-02')[0].style.cssText =
+                                "opacity: 1;opacity: 1;transform: rotate(-9deg)"
+                            $('.item-img-03')[0].style.cssText =
+                                "opacity: 1;opacity: 1;transform: rotate(3deg)"
+                            $('.item-img-04')[0].style.cssText =
+                                "opacity: 1;opacity: 1;transform: rotate(-20deg)"
+                            $('.item-img-05')[0].style.cssText =
+                                "opacity: 1;opacity: 1;transform: rotate(20deg)"
+                            $('.item-img-06')[0].style.cssText =
+                                "opacity: 1;opacity: 1;transform: rotate(-10deg)"
+                            $('.item-img-07')[0].style.cssText =
+                                "opacity: 1;opacity: 1;transform: rotate(18deg)"
+                            $('.item-img-08')[0].style.cssText =
+                                "opacity: 1;opacity: 1;transform: rotate(10deg)"
+                        }, 1500)
+
+                        index--
+                        if (index < 0) {
+                            index = data.length - 1
+                        }
+                        setTimeout(function () {
+                            // 初始第一张图
+                            $('.photo-01')[0].src = data[index].vertical01
+                            // 初始第二张图
+                            $('.photo-02')[0].src = data[index].vertical02
+                            // 初始第三张图
+                            $('.photo-03')[0].src = data[index].vertical03
+                            // 初始第四张图
+                            $('.photo-04')[0].src = data[index].across01
+                            // 初始第五张图
+                            $('.photo-05')[0].src = data[index].across02
+                            // 初始第六张图
+                            $('.photo-06')[0].src = data[index].across03
+                            // 初始第七张图
+                            $('.photo-07')[0].src = data[index].vertical04
+                            // 初始第八张图
+                            $('.photo-08')[0].src = data[index].vertical05
+                        }, 800)
+
+                    })
+
+                    // 又箭头按钮
+                    $('.rightArrows').on('click', function () {
+                        $('.item-img-01')[0].style.cssText = "opacity: 0;transform: rotate(-28deg);"
+                        $('.item-img-02')[0].style.cssText = "opacity: 0;transform: rotate(-14deg);"
+                        $('.item-img-03')[0].style.cssText = "opacity: 0;transform: rotate(8deg);"
+                        $('.item-img-04')[0].style.cssText = "opacity: 0;transform: rotate(-25deg);"
+                        $('.item-img-05')[0].style.cssText = "opacity: 0;transform: rotate(25deg);"
+                        $('.item-img-06')[0].style.cssText =
+                            "opacity: 0;transform: rotate(-15deg);"
+                        $('.item-img-07')[0].style.cssText = "opacity: 0;transform: rotate(23deg);"
+                        $('.item-img-08')[0].style.cssText = "opacity: 0;transform: rotate(15deg);"
+                        setTimeout(function () {
+                            $('.item-img-01')[0].style.cssText =
+                                "opacity: 1;transform: rotate(-33deg)"
+                            $('.item-img-02')[0].style.cssText =
+                                "opacity: 1;transform: rotate(-9deg)"
+                            $('.item-img-03')[0].style.cssText =
+                                "opacity: 1;transform: rotate(3deg)"
+                            $('.item-img-04')[0].style.cssText =
+                                "opacity: 1;transform: rotate(-20deg)"
+                            $('.item-img-05')[0].style.cssText =
+                                "opacity: 1;transform: rotate(20deg)"
+                            $('.item-img-06')[0].style.cssText =
+                                "opacity: 1;transform: rotate(-10deg)"
+                            $('.item-img-07')[0].style.cssText =
+                                "opacity: 1;transform: rotate(18deg)"
+                            $('.item-img-08')[0].style.cssText =
+                                "opacity: 1;transform: rotate(10deg)"
+                        }, 1500)
+
+                        index++
+                        if (index == data.length) {
+                            index = 0
+                        }
+                        setTimeout(function () {
+                            // 初始第一张图
+                            $('.photo-01')[0].src = data[index].vertical01
+                            // 初始第二张图
+                            $('.photo-02')[0].src = data[index].vertical02
+                            // 初始第三张图
+                            $('.photo-03')[0].src = data[index].vertical03
+                            // 初始第四张图
+                            $('.photo-04')[0].src = data[index].across01
+                            // 初始第五张图
+                            $('.photo-05')[0].src = data[index].across02
+                            // 初始第六张图
+                            $('.photo-06')[0].src = data[index].across03
+                            // 初始第七张图
+                            $('.photo-07')[0].src = data[index].vertical04
+                            // 初始第八张图
+                            $('.photo-08')[0].src = data[index].vertical05
+                        }, 800)
+
+                    })
+                }
+
+            }
+        });
+        $('.item-txt')[1].style.cssText = "color:#2dacfe;"
+        //迫不得已,把加入止观hover效果每个页面都写一次
+        $(function () {
+            $('#head-hover').on('mouseenter', function () {
+                $('.hidDiv')[0].style.cssText = "height:47px"
+            })
+            $('#head-hover').on('mouseleave', function () {
+                $('.hidDiv')[0].style.cssText = "height:0px"
+            })
+            $('.hidDiv').on('mouseenter', function () {
+                $('.hidDiv')[0].style.cssText = "height:47px"
+            })
+            $('.hidDiv').on('mouseleave', function () {
+                $('.hidDiv')[0].style.cssText = "height:0px"
+            })
+        })
+        $('.borderBottom2')[0].style.cssText = " display: block"
+    </script>
+    <script src="../public/js/contactShowDiv.js"></script>
+</body>
+
+</html>

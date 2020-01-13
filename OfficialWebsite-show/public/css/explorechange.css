@@ -1,0 +1,320 @@
+@font-face {
+    font-family: 'writeTypeFace';
+    src: url('../typeface/陈静的字完整版.ttf');
+}
+
+body {
+    background-color: #f8f9f9;
+    position: absolute !important
+}
+
+
+
+.photowall {
+    width: 100%;
+    min-width: 1280px;
+    margin-top: 170px;
+}
+
+.logImage-item {
+    margin-bottom: 200px;
+    margin-left: 850px;
+}
+
+.backImage {
+    width: 82%;
+    height: 100%;
+    /* margin: auto; */
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.backgroundImg {
+    width: 100%;
+    position: relative;
+}
+
+/* .backgroundImg>img {
+    width: 100%;
+} */
+
+/* ---------------------第一张图 */
+.item-img-01 {
+    /* width: 13.3%; */
+    width: 200px;
+    position: absolute;
+    top: 80px;
+    left: 170px;
+    -webkit-transform: rotate(-27deg);
+    -moz-transform: rotate(-27deg);
+    -ms-transform: rotate(-27deg);
+    -o-transform: rotate(-27deg);
+    transform: rotate(-27deg);
+    /* z-index: 10; */
+    -webkit-transition: 1s;
+    -o-transition: 1s;
+    -moz-transition: 1s;
+    transition: 1s;
+    opacity: 0;
+}
+
+
+.photo-01 {
+    width: 100%;
+    height: 100%;
+    -webkit-transition: 1s;
+    -o-transition: 1s;
+    -moz-transition: 1s;
+    transition: 1s;
+    -webkit-box-shadow: 0px 0px 10px #888888;
+    -moz-box-shadow: 0px 0px 10px #888888;
+    box-shadow: 0px 0px 10px #888888;
+}
+
+
+
+/* ---------------------第二张图 */
+.item-img-02 {
+    width: 220px;
+    position: absolute;
+    top: -50px;
+    left: 400px;
+    -webkit-transform: rotate(-14deg);
+    -moz-transform: rotate(-14deg);
+    -ms-transform: rotate(-14deg);
+    -o-transform: rotate(-14deg);
+    transform: rotate(-14deg);
+    /* z-index: 8; */
+    -webkit-transition: 1s;
+    -o-transition: 1s;
+    -moz-transition: 1s;
+    transition: 1s;
+    opacity: 0;
+}
+
+.photo-02 {
+    width: 100%;
+    -webkit-transition: 1s;
+    -o-transition: 1s;
+    -moz-transition: 1s;
+    transition: 1s;
+    -webkit-box-shadow: 0px 0px 10px #888888;
+    -moz-box-shadow: 0px 0px 10px #888888;
+    box-shadow: 0px 0px 10px #888888;
+}
+
+
+/* ---------------------第三张图 */
+.item-img-03 {
+    width: 265px;
+    position: absolute;
+    top: -100px;
+    left: 630px;
+    -webkit-transform: rotate(8deg);
+    -moz-transform: rotate(8deg);
+    -ms-transform: rotate(8deg);
+    -o-transform: rotate(8deg);
+    transform: rotate(8deg);
+    /* z-index: 5; */
+    -webkit-transition: 1s;
+    -o-transition: 1s;
+    -moz-transition: 1s;
+    transition: 1s;
+    opacity: 0;
+}
+
+.photo-03 {
+    width: 100%;
+    -webkit-box-shadow: 0px 0px 10px #888888;
+    -moz-box-shadow: 0px 0px 10px #888888;
+    box-shadow: 0px 0px 10px #888888;
+    -webkit-transition: 1s;
+    -o-transition: 1s;
+    -moz-transition: 1s;
+    transition: 1s;
+}
+
+
+/* ---------------------第四张图 */
+.item-img-04 {
+    width: 300px;
+    position: absolute;
+    top: -40px;
+    left: 900px;
+    -webkit-transform: rotate(-20deg);
+    -moz-transform: rotate(-20deg);
+    -ms-transform: rotate(-20deg);
+    -o-transform: rotate(-20deg);
+    transform: rotate(-20deg);
+    /* z-index: 5; */
+    -webkit-transition: 1s;
+    -o-transition: 1s;
+    -moz-transition: 1s;
+    transition: 1s;
+    opacity: 0;
+}
+
+.photo-04 {
+    width: 100%;
+    -webkit-transition: 1s;
+    -o-transition: 1s;
+    -moz-transition: 1s;
+    transition: 1s;
+    -webkit-box-shadow: 0px 0px 10px #888888;
+    -moz-box-shadow: 0px 0px 10px #888888;
+    box-shadow: 0px 0px 10px #888888;
+}
+
+
+
+
+/* ---------------------第五张图 */
+.item-img-05 {
+    width: 300px;
+    position: absolute;
+    top: 260px;
+    left: 320px;
+    -webkit-transform: rotate(20deg);
+    -moz-transform: rotate(20deg);
+    -ms-transform: rotate(20deg);
+    -o-transform: rotate(20deg);
+    transform: rotate(20deg);
+    -webkit-transition: 1s;
+    -o-transition: 1s;
+    -moz-transition: 1s;
+    transition: 1s;
+    opacity: 0;
+}
+
+.photo-05 {
+    width: 100%;
+    -webkit-box-shadow: 0px 0px 10px #888888;
+    -moz-box-shadow: 0px 0px 10px #888888;
+    box-shadow: 0px 0px 10px #888888;
+    -webkit-transition: 1s;
+    -o-transition: 1s;
+    -moz-transition: 1s;
+    transition: 1s;
+}
+
+
+/* ---------------------第六张图 */
+.item-img-06 {
+    width: 350px;
+    position: absolute;
+    top: 280px;
+    left: 630px;
+    -webkit-transform: rotate(-10deg);
+    -moz-transform: rotate(-10deg);
+    -ms-transform: rotate(-10deg);
+    -o-transform: rotate(-10deg);
+    transform: rotate(-10deg);
+    /* z-index: 6; */
+    -webkit-transition: 1s;
+    -o-transition: 1s;
+    -moz-transition: 1s;
+    transition: 1s;
+    opacity: 0;
+}
+
+
+.photo-06 {
+    width: 100%;
+    -webkit-box-shadow: 0px 0px 10px #888888;
+    -moz-box-shadow: 0px 0px 10px #888888;
+    box-shadow: 0px 0px 10px #888888;
+    -webkit-transition: 1s;
+    -o-transition: 1s;
+    -moz-transition: 1s;
+    transition: 1s;
+}
+
+
+/* ---------------------第七张图 */
+.item-img-07 {
+    width: 210px;
+    position: absolute;
+    top: 200px;
+    left: 960px;
+    -webkit-transform: rotate(23deg);
+    -moz-transform: rotate(23deg);
+    -ms-transform: rotate(23deg);
+    -o-transform: rotate(23deg);
+    transform: rotate(23deg);
+    /* z-index: 0; */
+    -webkit-transition: 1s;
+    -o-transition: 1s;
+    -moz-transition: 1s;
+    transition: 1s;
+    opacity: 0;
+}
+
+.photo-07 {
+    width: 100%;
+    -webkit-box-shadow: 0px 0px 10px #888888;
+    -moz-box-shadow: 0px 0px 10px #888888;
+    box-shadow: 0px 0px 10px #888888;
+    -webkit-transition: 1s;
+    -o-transition: 1s;
+    -moz-transition: 1s;
+    transition: 1s;
+}
+
+
+/* ---------------------第八张图 */
+.item-img-08 {
+    width: 220px;
+    position: absolute;
+    top: 100px;
+    left: 1200px;
+    -webkit-transform: rotate(10deg);
+    -moz-transform: rotate(10deg);
+    -ms-transform: rotate(10deg);
+    -o-transform: rotate(10deg);
+    transform: rotate(10deg);
+    /* z-index: 6; */
+    -webkit-transition: 1s;
+    -o-transition: 1s;
+    -moz-transition: 1s;
+    transition: 1s;
+    opacity: 0;
+}
+
+
+.photo-08 {
+    width: 100%;
+    -webkit-box-shadow: 0px 0px 10px #888888;
+    -moz-box-shadow: 0px 0px 10px #888888;
+    box-shadow: 0px 0px 10px #888888;
+    -webkit-transition: 1s;
+    -o-transition: 1s;
+    -moz-transition: 1s;
+    transition: 1s;
+}
+
+
+/* -------------------箭头 */
+.leftArrows {
+    position: absolute;
+    top: 200px;
+    z-index: 20;
+    cursor: pointer;
+}
+
+/* .leftArrows img {
+    width: 100%;
+} */
+
+.rightArrows {
+    position: absolute;
+    top: 200px;
+    left: 1550px;
+    z-index: 20;
+    cursor: pointer;
+}

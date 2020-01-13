@@ -1,0 +1,50 @@
+/* jshint esversion:6 */
+//  let Url = '192.168.5.143:8084/official';
+(function() {
+  // 导航栏
+  $.ajax({
+    type: "GET",
+    data: {
+      type: src
+    },
+    url: `http://${Url}/web/material/contact`,
+    success: function(response) {
+      $(".businessEmail").html(`商务合作:&nbsp;${response.data.businessEmail}`);
+      $(".eliteEmail").html(`精英招聘:&nbsp;${response.data.recruitEmail}`);
+      $(".recruitEmail").html(`游戏客服:&nbsp;${response.data.eliteEmail}`);
+      $(".erweima")[0].src = `${response.data.qrImg}`;
+    }
+  });
+
+  $(".joinList").hover(
+    function() {
+      $(".borderBottom4")[0].style.cssText = "display: block";
+      $("#joinBtn")[0].style.cssText = "color:#2dacfe;";
+    },
+    function() {
+      var src = window.location.href;
+      src = src.split("/").slice(-1)[0];
+      if (src === "JoinUse.html" || src === "schoolWebPortal.html") {
+        $(".borderBottom4")[0].style.cssText = "display: block";
+        $("#joinBtn")[0].style.cssText = "color:#2dacfe;";
+      } else {
+        $(".borderBottom4")[0].style.cssText = "display: none";
+        $("#joinBtn")[0].style.cssText = "color:fff;";
+      }
+    }
+  );
+
+  // 不用点击a标签也可以进行页面跳转,因布局已定,故此写此方法
+  $(".head-item").on("click", function() {
+    let text = $(this)[0].innerText;
+    if (text === "首页") {
+      $(location).attr("href", "../index.html");
+    }
+    if (text === "关于止观") {
+      $(location).attr("href", "../src/AboutCompany.html");
+    }
+    if (text === "产品中心") {
+      $(location).attr("href", "../src/productCenter.html");
+    }
+  });
+})();

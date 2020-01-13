@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>止观互娱-校园招聘</title>
+    <link rel="icon" href="../public/img/浏览器icon.png">
+    <link rel="stylesheet" href="../node_modules/swiper/css/swiper.min.css">
+    <link rel="stylesheet" type="text/css" href="../public/css/contactShowDiv.css">
+    <link rel="stylesheet" href="../public/css/schoolWebPortal.css">
+    <link rel="stylesheet" href="../public/css/header.css">
+    <link rel="stylesheet" href="../public/css/foolter.css">
+</head>
+
+<body>
+    <header style="position: fixed;width: 100%;z-index: 2888;">
+        <div class="joinDivShow">
+            <div class="contactDiv">
+                <div class="headTop">
+                    <img style="position: absolute;left: 0;" src="../public/img/contactway/01.png">
+                    <img id="closeDiv" style="position: absolute;left:0;cursor: pointer;"
+                        src="../public/img/contactway/02.png">
+                </div>
+                <div class="contentDiv">
+                    <img src="../public/img/contactway/03.png">
+                    <div class="QRcode">
+                        <img class="erweima" src="">
+                    </div>
+                    <p class="QRtext">止观互娱微信公众号</p>
+                    <div class="QRemall">
+                        <div class="qrEmall">
+                            <p class="businessEmail"></p>
+                            <p class="eliteEmail"></p>
+                            <p class="recruitEmail"></p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="header">
+            <a class="logImge" href="../index.html">
+                <img src="../public/img/logo-导航栏-小.png" alt />
+            </a>
+            <div class="header-label">
+                <div class="headText" id="headTxt1">
+                    <div class="head-item">
+                        <a class="item-txt" href="../index.html">首页</a>
+                        <div class="borderBottom"></div>
+                    </div>
+                </div>
+                <div class="headText" id="headTxt2">
+                    <div class="head-item">
+                        <a class="item-txt" href="../src/AboutCompany.html">关于止观</a>
+                        <div class="borderBottom2"></div>
+                    </div>
+                </div>
+                <div class="headText" id="headTxt3">
+                    <div class="head-item">
+                        <a class="item-txt" href="../src/productCenter.html">产品中心</a>
+                        <div class="borderBottom3"></div>
+                    </div>
+                </div>
+                <div class="headText" id="headTxt4">
+                    <div class="head-item" id="head-hover">
+                        <a class="item-txt" id="joinBtn">加入止观</a>
+                        <div class="borderBottom4"></div>
+                    </div>
+                </div>
+                <div class="hidDiv">
+                    <div class="hidWindow">
+                        <p>
+                            <a class="joinList" href="../src/JoinUse.html">社会招聘</a>
+                        </p>
+                        <p style="margin-left: 20%;">
+                            <a class="joinList" href="../src/schoolWebPortal.html">校园招聘</a>
+                        </p>
+                    </div>
+                </div>
+                <div class="headText" id="headTxt5">
+                    <div class="head-item" id="showWindow">
+                        <a class="item-txt">联系我们</a>
+                        <div class="borderBottom5"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="headImage">
+        <img src="../public/img/join/school.png">
+    </div>
+    <div id="a01"></div>
+    <section class="fixedDiv">
+        <div class="mainContent">
+            <!-- 悬浮导航栏 -->
+            <div class="suspend">
+                <div class="stickBtn">
+                    <a href="#a01">
+                        <img id="suspension" src="../public/img/schoolWebPortal/悬浮导航栏-返回01.png">
+                    </a>
+                </div>
+                <div class="suspendItem">
+                    <ul class="supendList">
+                        <li><a class="Astyle" href="../src/schoolUse.html">校招职位</a></li>
+                        <li><a class="Astyle" style="color: silver;" href="javascript:;">行程安排</a></li>
+                        <li><a class="Astyle" style="color: silver;" href="javascript:;">加入流程</a></li>
+                        <li style="border-bottom:0px"><a class="Astyle" href="../src/AboutCompany.html">关于止观</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="firstItem">
+                <div class="leftItemImg">
+                    <img src="../public/img/schoolWebPortal/校招标头-左装饰条.png">
+                </div>
+                <div class="itemEnImg">
+                    <img src="../public/img/schoolWebPortal/校招标头-英文.png">
+                </div>
+            </div>
+            <div class="secondItem">
+                <img src="../public/img/schoolWebPortal/校招标头-中文.png">
+            </div>
+            <div class="thirdlyWire"></div>
+            <div class="fourthlyItem">
+                <p class="itemChTxt">当初征服星辰大海的誓言还记得吗?行动吧!</p>
+            </div>
+            <div class="fifthItem">
+                <div class="fifthImg01">
+                    <img class="F-itemImage01" src="">
+                    <div class="fifthBtn01">
+                        <img class="fifthButton" src="../public/img/schoolWebPortal/校招入口-btn01.png">
+                        <p class="fifthBtnTxt">点击查看</p>
+                    </div>
+                </div>
+                <div class="fifthImg02">
+                    <img class="F-itemImage02" src="">
+                    <div class="fifthBtn02">
+                        <img class="fifthButton" src="../public/img/schoolWebPortal/校招入口-btn01.png">
+                        <p class="fifthBtnTxt">点击查看</p>
+                    </div>
+                </div>
+                <div class="fifthImg03">
+                    <img class="F-itemImage03" src="">
+                    <div class="fifthBtn03">
+                        <img class="fifthButton" src="../public/img/schoolWebPortal/校招入口-btn01.png">
+                        <p class="fifthBtnTxt">点击查看</p>
+                    </div>
+                </div>
+                <div class="itemAllBtn">
+                    <img class="AllBtn" src="../public/img/schoolWebPortal/校招入口-04.png" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer style="margin-top: 50%;">
+        <div class="footerText">
+            <div class="footerDiv">
+                <div class="footerImg">
+                    <img src="../public/img/logofooter.png">
+                </div>
+                <div class="text-align">
+                    <div class="text-height">
+                        <p>成都止观互娱科技有限公司 版权所有</p>
+                        <p>公司电话：028-65225090 | 公司地址：成都高新区锦晖西一街99号布鲁明顿广场1栋2单元701</p>
+                        <p>川网文 [2016] 5898-193号 | <a href="http://beian.miit.gov.cn" style="color:#e8e8e8">蜀ICP备16035972号-1</a> 文网游备字(2017) M-RPG 0345号 | 经营许可证编号 川B2-20160380 | <a style="color:#e8e8e8"
+                            href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=51019002002260 ">公安备案号</a></p>
+                        <p>本公司游戏产品适合18岁以上成年人使用（家长监护） 自律公约</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="../public/js/Url.js"></script>
+    <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="../public/js/AllSrc.js"></script>
+    <script src="../public/js/contactShowDiv.js"></script>
+    <script src="../public/js/schoolWebPortal.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,711 @@
+body {
+    /* width: 1920px; */
+    min-width: 1280px;
+    background-color: #f8f9f9;
+    /* position: relative !important; */
+}
+
+input[type="text"] {
+    /* text-indent: 10px; */
+    padding-left: 10px;
+}
+
+@font-face {
+    font-family: 'SourceHanSansCN-Bold';
+    src: url('../typeface/SourceHanSansCN-ExtraLight.otf'),
+}
+
+input::-webkit-input-placeholder {
+    /* placeholder颜色  */
+    color: #bcbcbc;
+    /* placeholder字体大小  */
+    font-size: 14.5px;
+    position: relative;
+    left: 13px;
+    letter-spacing: 1px
+}
+
+input::-moz-placeholder {
+    /* placeholder颜色  */
+    color: #bcbcbc;
+    /* placeholder字体大小  */
+    font-size: 14.5px;
+    position: relative;
+    left: 13px;
+    letter-spacing: 1px
+}
+
+/* 投简历弹窗 */
+
+.resumeDivShow {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 8888;
+    display: none;
+}
+
+.fillForm {
+    width: 567px;
+    height: 567px;
+    margin: 10% auto;
+}
+
+.FormHead {
+    width: 100%;
+    position: relative;
+    -webkit-transition: 0.5s;
+    -o-transition: 0.5s;
+    -moz-transition: 0.5s;
+    transition: 0.5s;
+    opacity: 0;
+    top: 20%;
+}
+
+.FormHead img {
+    width: 100%;
+    position: relative;
+}
+
+.offForm {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    right: 0;
+    z-index: 10;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.formHeadText {
+    font-size: 16px;
+    position: absolute;
+    top: 27px;
+    left: 150px;
+    color: #3cc1ff;
+    letter-spacing: 1px
+}
+
+.fillContent {
+    height: 511px;
+    position: relative;
+    -webkit-transition: 0.5s;
+    -o-transition: 0.5s;
+    -moz-transition: 0.5s;
+    transition: 0.5s;
+    opacity: 0;
+    top: 20%;
+}
+
+.fillImage {
+    position: absolute;
+    top: -7px;
+    left: -8px;
+}
+
+.formWindow {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 7%;
+    top: 25px;
+}
+
+.inputName {
+    line-height: 37px;
+    color: #282828;
+    font-size: 16px;
+    font-family: 'SourceHanSansCN-Bold';
+}
+
+.inputPhone {
+    line-height: 37px;
+    color: #282828;
+    font-size: 16px;
+    font-family: 'SourceHanSansCN-Bold';
+}
+
+.inputEmall,
+.inputQQ,
+.inputUnload {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin-top: 0px;
+}
+
+.jianliInput {
+    width: 400px;
+    height: 37px;
+    background-color: #edf4fd;
+    border: 1px solid #d5f2ff;
+    margin-left: 8px;
+    position: relative;
+    font-size: 15px;
+    color: #888b9c;
+    line-height: 37px;
+    text-align: center;
+}
+
+.fileText {
+    position: absolute;
+    left: 40%;
+    top: 20%;
+}
+
+.file-upload {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    outline: none;
+    background-color: transparent;
+    filter: alpha(opacity=0);
+    -moz-opacity: 0;
+    -khtml-opacity: 0;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.TipsTxt {
+    position: absolute;
+    top: 295px;
+    left: 67px;
+    width: 445px;
+    height: 89px;
+    color: #bcbcbc;
+    font-size: 14px;
+}
+
+
+/* 提交简历按钮 */
+
+.sendButton {
+    /* width: 200px; */
+    position: absolute;
+    bottom: 10%;
+    left: 36%;
+    cursor: pointer;
+}
+
+.sendButton img {
+    width: 100%;
+    height: 100%;
+}
+
+.sendButtonTxt {
+    text-align: center;
+    position: absolute;
+    left: 38%;
+    top: 13%;
+    color: #fff;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+
+/* 轮播图 */
+
+.whirligig {
+    width: 100%;
+    min-width: 1280px;
+    height: 477px;
+    min-height: 350px;
+    margin-top: 81px;
+    position: relative;
+    overflow: hidden;
+}
+
+.whirligigBack {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-transition: 0.3s;
+    -o-transition: 0.3s;
+    -moz-transition: 0.3s;
+    transition: 0.3s;
+}
+
+.whirligigBack img {
+    min-width: 100%;
+    /* height: 100%; */
+    /* -webkit-filter: blur(4px);
+    filter: blur(4px); */
+    display: inline-block;
+
+}
+
+.whirligigImg {
+    width: 65%;
+    min-height: 350px;
+    height: 28vw;
+    position: absolute;
+    left: 17.5%;
+    overflow: hidden;
+    display: none;
+}
+
+.marginDiv {
+    width: 100%;
+    height: 100%;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    position: absolute;
+    background-color: royalblue;
+    -webkit-transition: 0.3s;
+    -o-transition: 0.3s;
+    -moz-transition: 0.3s;
+    transition: 0.3s;
+}
+
+.marginDiv img {
+    width: 100%;
+    min-width: 100%;
+    height: 100%;
+}
+
+
+/* 轮播图左右键 */
+
+.leftBtn {
+    position: absolute;
+    top: 200px;
+    left: 92%;
+    /* background-color: red; */
+    /* opacity: 0; */
+    cursor: pointer;
+}
+
+.rightBtn {
+    position: absolute;
+    top: 200px;
+    left:1%;
+    /* background-color: royalblue; */
+    /* opacity: 0; */
+    cursor: pointer;
+}
+
+
+/* 轮播分页点 */
+
+.dotImge {
+    list-style: none;
+    position: absolute;
+    top: 90%;
+    left: 48%;
+    /* left: 48vw;
+    top:25vw; */
+    /* bottom: 3%; */
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    z-index: 2219;
+}
+
+.dotImge li {
+    margin-right: 1.62vw;
+    line-height: 10px;
+    cursor: pointer;
+}
+
+
+/* 招聘信息列表 */
+
+.recruitList {
+    width: 1239px;
+    margin: 0 auto;
+}
+
+.headline-EN {
+    width: 27%;
+    margin: auto;
+    opacity: 0;
+    margin-bottom: 19px;
+    margin-top: 10%;
+    -webkit-transition: 2s;
+    -o-transition: 2s;
+    -moz-transition: 2s;
+    transition: 2s;
+}
+
+.headline-EN img {
+    width: 100%;
+    margin-top: 5.8vw;
+}
+
+.headline-CN {
+    width: 100%;
+    margin: auto;
+    margin-top: 15%;
+    opacity: 0;
+    -webkit-transition: 2s;
+    -o-transition: 2s;
+    -moz-transition: 2s;
+    transition: 2s;
+}
+
+.headline-CN img {
+    width: 100%;
+}
+
+
+/* ******信息列表 */
+
+.joinLists {
+    width: 100%;
+    max-height: 100%;
+    /* height: 870px; */
+    /* min-height: 56vw;
+    margin-top: 10vw; */
+    opacity: 0;
+    -webkit-transition: 2s;
+    -o-transition: 2s;
+    -moz-transition: 2s;
+    transition: 2s;
+    margin-bottom: 10%;
+}
+
+.joinHead {
+    height: 94px;
+    -webkit-box-shadow: 0px 0px 0.5px #9eb4c5;
+    -moz-box-shadow: 0px 0px 0.5px #9eb4c5;
+    box-shadow: 0px 0px 0.5px #9eb4c5;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    position: relative;
+    margin-bottom: 1%;
+    background: #fff;
+}
+
+.theFirstTxte {
+    font-size: 12pt;
+    color: #2bb0ff;
+    font-family: "SourceHanSansCN-Bold";
+    font-weight: 500;
+    line-height: 94px;
+    margin-left: 27px;
+    white-space: nowrap;
+}
+
+.theFirstTxte-item {
+    font-size: 12pt;
+    color: #282828;
+    font-family: "SourceHanSansCN-Bold";
+    font-weight: 500;
+    line-height: 94px;
+    margin-left: 32px;
+    cursor: pointer;
+}
+
+.positionInput {
+    margin: auto;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    position: relative;
+}
+
+.positionList {
+    white-space: nowrap;
+}
+
+.searchWindow {
+    width: 481px;
+    border: 1px solid #2dadfe;
+}
+
+.searchBtn {
+    width: 110px;
+    height: 36px;
+    cursor: pointer;
+}
+
+
+
+.searchBtn img {
+    width: 100%;
+    height: 100%;
+}
+
+
+.searchBtnTxt {
+    position: absolute;
+    top: 17%;
+    left: 85.5%;
+    color: #fff;
+}
+
+.searchTxt {
+    color: #fff;
+    font-size: 0.8vw;
+    line-height: 1.6vw;
+    margin-left: 20%;
+}
+
+
+/* 招聘列表头部 */
+
+.deteilsHead {
+    -webkit-box-shadow: 0px 0px 0.5px #9eb4c5;
+    -moz-box-shadow: 0px 0px 0.5px #9eb4c5;
+    box-shadow: 0px 0px 0.5px #9eb4c5;
+    width: 100%;
+    height: 45px;
+    background-color: #545454;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -moz-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    color: #f9f9f9;
+    font-size: 12pt;
+    font-family: 'SourceHanSansCN-Bold';
+}
+
+.deteilsHead p {
+    line-height: 45px;
+}
+
+.deteilsList {
+    -webkit-box-shadow: 0px 0px 0.5px #9eb4c5;
+    -moz-box-shadow: 0px 0px 0.5px #9eb4c5;
+    box-shadow: 0px 0px 0.5px #9eb4c5;
+}
+
+.list-item {
+    width: 100%;
+    height: 72px;
+    background-color: #fff;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    font-size: 12pt;
+    cursor: pointer;
+    border-bottom: 1px solid #e8e8e8;
+}
+
+.list-item p {
+    line-height: 72px;
+}
+
+.postName {
+    width: 300px;
+    text-align: left;
+    margin-left: 10px;
+    display: flex;
+}
+
+.postItem {
+    display: block;
+    font-size: 12pt;
+}
+
+.HotImage {
+    display: block;
+    margin-right: 10px;
+}
+
+/* .HotImage>img {
+    width: 1vw;
+} */
+
+.postSort {
+    width: 100px;
+    text-align: center;
+    margin-left: 260px;
+}
+
+.postNumber {
+    width: 50px;
+    /* margin-right: 3vw; */
+    margin-left: 490px;
+    text-align: center;
+}
+
+.postContent {
+    width: 100%;
+    max-height: 0;
+    overflow: hidden;
+    background: #eaf9fe;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    position: relative;
+    -webkit-transition: 0.7s;
+    -o-transition: 0.7s;
+    -moz-transition: 0.7s;
+    transition: 0.7s;
+}
+
+.contentText {
+    width: 900px;
+    font-size: 11.2pt;
+    color: #434343;
+    padding: 30px;
+    font-family: 'SourceHanSansCN-Bold';
+    /* white-space: nowrap; */
+    letter-spacing: 2px;
+    line-height: 24px;
+}
+
+
+/* 投递简历按钮 */
+
+.sendBtn {
+    position: absolute;
+    /* width: 5.6vw; */
+    bottom: 1.5vw;
+    right: 1.8vw;
+    cursor: pointer;
+}
+
+.sendBtn img {
+    width: 100%;
+}
+
+.sendBtnTxt {
+    position: absolute;
+    top: 18%;
+    left: 20%;
+    color: #fff;
+    font-size: 12pt;
+}
+
+
+/* 分页 */
+
+.paging {
+    margin-left: 505px;
+    margin-top: 41px;
+    font-size: 12pt;
+}
+
+.prev {
+    cursor: pointer;
+    margin-right: 45px;
+    /* margin-left: 39%; */
+}
+
+.next {
+    cursor: pointer;
+    margin-left: 45px;
+}
+
+
+
+/* 投递简历表单验证 */
+.validatorName {
+    color: red;
+    font-size: 12px;
+    margin-left: 50px;
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.validatorPhone {
+    color: red;
+    font-size: 12px;
+    margin-left: 170px;
+    opacity: 0;
+}
+
+.validatorEmall {
+    color: red;
+    font-size: 12px;
+    margin-left: 85px;
+    opacity: 0;
+}
+
+.validatorQQ {
+    color: red;
+    font-size: 12px;
+    margin-left: 85px;
+    opacity: 0;
+}
+
+.validatorResume {
+    color: red;
+    font-size: 12px;
+    margin-left: 85px;
+    opacity: 0;
+}
+
+/* 后台返回信息弹窗 */
+.msgText {
+    width: 100%;
+    min-width: 1280px;
+    height: 100%;
+    /* background-color: rgba(0, 0, 0, 0.5); */
+    z-index: 99999;
+    position: fixed;
+    display: none;
+}
+
+.msgDiv {
+    width: 400px;
+    height: 250px;
+    background-color: #fff;
+    box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.5);
+    z-index:9999;
+    margin: 10% auto;
+    border-radius: 5px;
+}
+
+.msgDivTxt {
+    position: absolute;
+    left: 48.5%;
+    top: 32%;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.msgContent {
+    width: 80%;
+    position: relative;
+    top: 90px;
+    margin: auto;
+    text-align: center;
+}
+
+.closeMsgDiv {
+    width: 80px;
+    height: 30px;
+    color: #fff;
+    line-height: 30px;
+    background-color: #409EFF;
+    border-radius: 3px;
+    position: relative;
+    top: 160px;
+    margin: auto;
+    text-align: center;
+    cursor: pointer;
+}

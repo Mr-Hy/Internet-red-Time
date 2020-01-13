@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>止观互娱-校园招聘</title>
+    <link rel="icon" href="../public/img/浏览器icon.png">
+    <link rel="stylesheet" href="../node_modules/swiper/css/swiper.min.css">
+    <link rel="stylesheet" href="../public/css/JoinUse.css">
+    <link rel="stylesheet" href="../public/css/header.css">
+    <link rel="stylesheet" type="text/css" href="../public/css/contactShowDiv.css">
+    <link rel="stylesheet" href="../public/css/foolter.css">
+
+    <style>
+        input::-webkit-input-placeholder {
+            /* placeholder颜色  */
+            color: #bcbcbc;
+            /* placeholder字体大小  */
+            font-size: 14.5px;
+            position: relative;
+            left: 13px;
+            letter-spacing: 1px
+        }
+
+        #loading {
+            position: fixed;
+            z-index: 9999;
+            width: 100%;
+            height: 100%;
+            top: 40%;
+            left: 0%;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #595758;
+            opacity: 0.5;
+            display: none;
+
+        }
+    </style>
+</head>
+
+<body>
+    <script src="../public/js/AllSrc.js"></script>
+    <!-- loading -->
+    <div id="loading">
+        <img src="../public/img/loading.gif" alt="loading.." />
+    </div>
+    <!-- 后台返回信息弹窗 -->
+    <div class="msgText">
+        <div class="msgDiv">
+            <!-- <p class="msgDivTxt">提示!</p> -->
+            <p class="msgContent"></p>
+            <div class="closeMsgDiv">关闭</div>
+        </div>
+    </div>
+    <!-- 简历投递弹窗 -->
+    <div class="resumeDivShow">
+        <div class="fillForm">
+            <div class="FormHead">
+                <div class="offForm"></div>
+                <img src="../public/img/popup/投递弹窗_标题栏.png">
+                <p class="formHeadText">当初征服星辰大海的誓言还记得吗?行动吧!</p>
+            </div>
+            <div class="fillContent">
+                <img class="fillImage" src="../public/img/popup/投递弹窗_内容框.png">
+                <div class="formWindow">
+                    <div style="display: flex;">
+                        <div style="display: flex;">
+                            <span class="inputName">姓名 <span style="color: red;">*</span> </span>
+                            <input class="resName" style="height: 37px;width: 137px;margin-left: 8px;" type="text"
+                                placeholder="姓名">
+                        </div>
+                        <div style="display: flex;margin-left: 16px;">
+                            <span class="inputPhone">联系电话 <span style="color: red;">*</span> </span>
+                            <input class="resPhone" style="height: 37px;width: 167px;margin-left: 8px;" type="text"
+                                placeholder="请输入手机号码">
+                        </div>
+                    </div>
+                    <span class="validatorName">*姓名不能为空</span>
+                    <span class="validatorPhone">*电话不能为空</span>
+                    <div class="inputEmall">
+                        <span>电子邮箱 <span style="color: red;">*</span> </span>
+                        <input class="resMail" placeholder="邮箱" type="text"
+                            style="width: 387px;height:37px;margin-left: 8px;">
+                    </div>
+                    <span class="validatorEmall">*邮箱不能为空</span>
+                    <div class="inputQQ">
+                        <span>Q&nbsp;Q号码 <span style="color: red;">*</span> </span>
+                        <input class="resQQ" placeholder="QQ" type="text"
+                            style="width: 387px;height:37px;margin-left: 10px;">
+                    </div>
+                    <span class="validatorQQ">*QQ号不能为空</span>
+                    <div class="inputUnload">
+                        <span>上传简历 <span style="color: red;">*</span> </span>
+                        <div class="jianliInput">
+                            <span class="clickOnloadText">点击上传</span>
+                            <input placeholder="点击上传" type="file" class="file-upload"
+                                accept=".doc,.docx,.pdf,.jpg,.png,.jpeg,.pptx" id="up_file" name="up_file"
+                                style="width: 399px;height:37px;margin-left: 8px;">
+                            <!-- <p class="fileText">点击上传</p> -->
+                        </div>
+                    </div>
+                    <span class="validatorResume">*未上传简历</span>
+                </div>
+                <p class="TipsTxt">
+                    应聘美术岗位可直接将简历及作品打包发至jobs@archly.cc,邮箱主题为:"姓名+应聘岗位+官网".
+                </p>
+                <div class="sendButton">
+                    <img src="../public/img/popup/投递弹窗_btn01.png">
+                    <p class="sendButtonTxt">发送</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <header style="position: fixed;margin-top:-142px;width: 100%;z-index: 2888;">
+
+        <div class="joinDivShow">
+            <div class="contactDiv">
+                <div class="headTop">
+                    <img style="position: absolute;left: 0;" src="../public/img/contactway/01.png">
+                    <img id="closeDiv" style="position: absolute;left:0;cursor: pointer;"
+                        src="../public/img/contactway/02.png">
+                </div>
+                <div class="contentDiv">
+                    <img src="../public/img/contactway/03.png">
+                    <div class="QRcode">
+                        <img class="erweima" src="">
+                    </div>
+                    <p class="QRtext">止观互娱微信公众号</p>
+                    <div class="QRemall">
+                        <div class="qrEmall">
+                            <p class="businessEmail"></p>
+                            <p class="eliteEmail"></p>
+                            <p class="recruitEmail"></p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="header">
+            <a class="logImge" href="../index.html">
+                <img src="../public/img/logo-导航栏-小.png" alt />
+            </a>
+            <div class="header-label">
+                <div class="headText" id="headTxt1">
+                    <div class="head-item">
+                        <a class="item-txt" href="../index.html">首页</a>
+                        <div class="borderBottom"></div>
+                    </div>
+                </div>
+                <div class="headText" id="headTxt2">
+                    <div class="head-item">
+                        <a class="item-txt" href="../src/AboutCompany.html">关于止观</a>
+                        <div class="borderBottom2"></div>
+                    </div>
+                </div>
+                <div class="headText" id="headTxt3">
+                    <div class="head-item">
+                        <a class="item-txt" href="../src/productCenter.html">产品中心</a>
+                        <div class="borderBottom3"></div>
+                    </div>
+                </div>
+                <div class="headText" id="headTxt4">
+                    <div class="head-item" id="head-hover">
+                        <a class="item-txt" id="joinBtn">加入止观</a>
+                        <div class="borderBottom4"></div>
+                    </div>
+                </div>
+                <div class="hidDiv">
+                    <div class="hidWindow">
+                        <p>
+                            <a class="joinList" href="../src/JoinUse.html">社会招聘</a>
+                        </p>
+                        <p style="margin-left: 20%;">
+                            <a class="joinList" href="../src/schoolWebPortal.html">校园招聘</a>
+                        </p>
+                    </div>
+                </div>
+                <div class="headText" id="headTxt5">
+                    <div class="head-item" id="showWindow">
+                        <a class="item-txt">联系我们</a>
+                        <div class="borderBottom5"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="recruitList" style="margin-top: 142px;">
+        <div class="headline-EN">
+            <img src="../public/img/join/校招标头-英文01.png">
+        </div>
+        <div class="headline-CN">
+            <img src="../public/img/join/校招标头-中文01.png">
+        </div>
+        <div class="joinLists">
+            <div class="joinHead">
+                <span class="theFirstTxte" style="color:#2bb0ff;">职位类别：</span>
+                <div class="positionList">
+                </div>
+                <div class="positionInput">
+                    <input type="text" class="searchWindow" id="searchInput">
+                    <div class="searchBtn">
+                        <span class="searchBtnTxt">职位搜索</span>
+                        <img src="../public/img/join/社招-btn01.jpg">
+                    </div>
+                </div>
+            </div>
+            <div class="deteilsHead">
+                <p style="margin-left: 2vw;">职位名称</p>
+                <p>职位类别</p>
+                <p style="margin-right: 2vw;">招聘人数</p>
+            </div>
+            <div class="deteilsList">
+                <!-- 循环生成列表 -->
+            </div>
+            <div class="paging">
+                <span class="prev">上一页</span>
+                <span>
+                    <span class="currntPage">1</span>
+                    <span>/</span>
+                    <span class="totalPage">3</span>
+                </span>
+                <span class="next">下一页</span>
+            </div>
+        </div>
+    </div>
+    <footer style="margin-top: -1%;">
+        <div class="footerText">
+            <div class="footerDiv">
+                <div class="footerImg">
+                    <img src="../public/img/logofooter.png">
+                </div>
+                <div class="text-align">
+                    <div class="text-height">
+                        <p>成都止观互娱科技有限公司 版权所有</p>
+                        <p><a target="_blank" href="http://beian.miit.gov.cn" style="color:#e8e8e8">蜀ICP备16035972号-1</a>
+                            |
+                            <a target="_blank" style="color:#e8e8e8"
+                                href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=51019002002260 ">川公网安备
+                                51019002002260号</a>
+                        </p>
+                        <p>川网文 [2016] 5898-193号 | 文网游备字(2017) M-RPG 0345号 | 经营许可证编号
+                            川B2-20160380
+                        </p>
+                        <p>公司电话：028-65225090 | 公司地址：成都高新区锦晖西一街99号布鲁明顿广场1栋2单元701</p>
+                        <p>本公司游戏产品适合18岁以上成年人使用（家长监护） 自律公约</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="../public/js/Url.js"></script>
+    <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="../public/js/schoolUse.js"></script>
+    <script src="../public/js/contactShowDiv.js"></script>
+    <script src="../public/js/header.js"></script>
+    <!-- <script src="192.168.5.224:8084/website/showRecuirtment"></script> -->
+</body>
+
+</html>

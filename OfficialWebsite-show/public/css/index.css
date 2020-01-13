@@ -1,0 +1,413 @@
+body {
+    /* width: 1920px; */
+    background-color: #f8f9f9;
+    min-width: 1280px;
+}
+
+.header {
+    position: fixed;
+}
+
+.lookMore{
+    cursor: pointer;
+}
+
+.video {
+    -o-object-fit: fill;
+    object-fit: fill;
+    width: 100%;
+    height: 100%;
+}
+
+.videoDiv {
+    width: 100%;
+    min-width: 1280px;
+    height:42vw;
+    min-height: 550px;
+}
+
+.parfather {
+    width: 100%;
+}
+
+.particulars {
+    width: 65%;
+    min-width: 1200px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    position: relative;
+    margin: auto;
+    opacity: 0;
+    top: 0;
+    -webkit-transition: 2s;
+    -o-transition: 2s;
+    -moz-transition: 2s;
+    transition: 2s;
+    text-align: center;
+}
+
+.bakcColor {
+    width: 100%;
+    height:357px;
+    min-width: 1280px;
+    background-color: #d6eaf7;
+    margin-top: 188px;
+    position: absolute;
+}
+
+.bakcColor img {
+    width: 100%;
+    height: 100%;
+    min-width: 1280px;
+}
+
+/* **********************************第一张图********************************* */
+.filterDiv {
+    width: 297px;
+    height: 517px;
+    position: absolute;
+    top: 0;
+    background-color: #1a1919;
+    z-index: 999;
+    -webkit-transition: 0.5s;
+    -o-transition: 0.5s;
+    -moz-transition: 0.5s;
+    transition: 0.5s;
+    opacity: 0;
+    text-align: center;
+    cursor: pointer;
+}
+
+.filterDiv-text {
+    line-height: 517px;
+    font-size: 16pt;
+    color: #fff;
+    font-family: "Source Han Sans CN"
+}
+
+.itemDiv {
+    width: 297px;
+    height: 517px;
+    position: relative;
+}
+
+#filterimg01 {
+    width: 297px;
+    height: 517px;
+}
+
+.border-left {
+    width: 297px;
+    height: 0px;
+    border-left: 4px solid #1496ed;
+    position: absolute;
+    -webkit-transition: 1.5s;
+    -o-transition: 1.5s;
+    -moz-transition: 1.5s;
+    transition: 1.5s;
+}
+
+.labelStyle {
+    width: 0%;
+    height: 78px;
+    position: absolute;
+    bottom: 0px;
+    background-image: -webkit-gradient(linear, left top, right top, from(#1496ed), to(#2de3fe));
+    background-image: -webkit-linear-gradient(left, #1496ed, #2de3fe);
+    background-image: -moz-linear-gradient(left, #1496ed, #2de3fe);
+    background-image: -o-linear-gradient(left, #1496ed, #2de3fe);
+    background-image: linear-gradient(to right, #1496ed, #2de3fe);
+    opacity: 0;
+    z-index: 88;
+    overflow: hidden;
+    -webkit-transition: 0.5s;
+    -o-transition: 0.5s;
+    -moz-transition: 0.5s;
+    transition: 0.5s;
+}
+
+.labeltext-01 {
+    font-size: 16pt;
+    text-align: left;
+    color: #fff;
+    line-height: 50px;
+    white-space: nowrap;
+    margin-left: 10px;
+    font-family: "Source Han Sans CN";
+}
+
+.labeltext-02 {
+    font-size: 10pt;
+    text-align: left;
+    color: #fff;
+    line-height: 5px;
+    white-space: nowrap;
+    margin-left: 10px;
+    font-family: "Source Han Sans CN"
+}
+
+/* *************************************第二张图********************************** */
+.filterDiv2 {
+    width: 297px;
+    height: 517px;
+    position: absolute;
+    top: 0;
+    background-color: #1a1919;
+    z-index: 999;
+    -webkit-transition: 0.5s;
+    -o-transition: 0.5s;
+    -moz-transition: 0.5s;
+    transition: 0.5s;
+    opacity: 0;
+    text-align: center;
+    cursor: pointer;
+}
+
+.filterDiv-text2 {
+    line-height: 517px;
+    font-size: 16pt;
+    color: #fff;
+    font-family: "Source Han Sans CN"
+}
+
+.itemDiv2 {
+    width: 297px;
+    height: 517px;
+    position: relative;
+    left: 18px;
+}
+
+.border-left2 {
+    width: 297px;
+    height: 0px;
+    border-left: 4px solid #1496ed;
+    position: absolute;
+    -webkit-transition: 1.5s;
+    -o-transition: 1.5s;
+    -moz-transition: 1.5s;
+    transition: 1.5s;
+}
+
+.labelStyle2 {
+    width: 0%;
+    height: 78px;
+    position: absolute;
+    bottom: 0px;
+    background-image: -webkit-gradient(linear, left top, right top, from(#1496ed), to(#2de3fe));
+    background-image: -webkit-linear-gradient(left, #1496ed, #2de3fe);
+    background-image: -moz-linear-gradient(left, #1496ed, #2de3fe);
+    background-image: -o-linear-gradient(left, #1496ed, #2de3fe);
+    background-image: linear-gradient(to right, #1496ed, #2de3fe);
+    opacity: 0;
+    z-index: 88;
+    overflow: hidden;
+    -webkit-transition: 0.5s;
+    -o-transition: 0.5s;
+    -moz-transition: 0.5s;
+    transition: 0.5s;
+}
+
+.labeltext02-01 {
+    font-size: 16pt;
+    text-align: left;
+    color: #fff;
+    line-height: 50px;
+    white-space: nowrap;
+    margin-left: 10px;
+    font-family: "Source Han Sans CN";
+}
+
+.labeltext02-02 {
+    font-size: 10pt;
+    text-align: left;
+    color: #fff;
+    line-height: 5px;
+    white-space: nowrap;
+    margin-left: 10px;
+    font-family: "Source Han Sans CN"
+}
+
+
+/* *************************************第三张图******************************** */
+.filterDiv3 {
+    width: 297px;
+    height: 517px;
+    position: absolute;
+    top: 0;
+    background-color: #1a1919;
+    z-index: 999;
+    -webkit-transition: 0.5s;
+    -o-transition: 0.5s;
+    -moz-transition: 0.5s;
+    transition: 0.5s;
+    opacity: 0;
+    text-align: center;
+    cursor: pointer;
+}
+
+.filterDiv-text3 {
+    line-height: 517px;
+    font-size: 16pt;
+    color: #fff;
+    font-family: "Source Han Sans CN"
+}
+
+.itemDiv3 {
+    width: 297px;
+    height: 517px;
+    position: relative;
+    left: 36px;
+}
+
+.border-left3 {
+    width: 297px;
+    height: 0px;
+    border-left: 4px solid #1496ed;
+    position: absolute;
+    -webkit-transition: 1.5s;
+    -o-transition: 1.5s;
+    -moz-transition: 1.5s;
+    transition: 1.5s;
+}
+
+.labelStyle3 {
+    width: 0%;
+    height: 78px;
+    position: absolute;
+    bottom: 0px;
+    background-image: -webkit-gradient(linear, left top, right top, from(#1496ed), to(#2de3fe));
+    background-image: -webkit-linear-gradient(left, #1496ed, #2de3fe);
+    background-image: -moz-linear-gradient(left, #1496ed, #2de3fe);
+    background-image: -o-linear-gradient(left, #1496ed, #2de3fe);
+    background-image: linear-gradient(to right, #1496ed, #2de3fe);
+    opacity: 0;
+    z-index: 88;
+    overflow: hidden;
+    -webkit-transition: 0.5s;
+    -o-transition: 0.5s;
+    -moz-transition: 0.5s;
+    transition: 0.5s;
+}
+
+.labeltext03-01 {
+    font-size: 16pt;
+    text-align: left;
+    color: #fff;
+    line-height: 50px;
+    white-space: nowrap;
+    margin-left: 10px;
+    font-family: "Source Han Sans CN";
+}
+
+.labeltext03-02 {
+    font-size: 10pt;
+    text-align: left;
+    color: #fff;
+    line-height: 5px;
+    white-space: nowrap;
+    margin-left: 10px;
+    font-family: "Source Han Sans CN"
+}
+
+/* *************************************第四张图****************************** */
+.filterDiv4 {
+    width: 297px;
+    height: 517px;
+    position: absolute;
+    top: 0;
+    background-color: #1a1919;
+    z-index: 999;
+    -webkit-transition: 0.5s;
+    -o-transition: 0.5s;
+    -moz-transition: 0.5s;
+    transition: 0.5s;
+    opacity: 0;
+    text-align: center;
+    cursor: pointer;
+}
+
+.filterDiv-text4 {
+    line-height: 517px;
+    font-size: 16pt;
+    color: #fff;
+    font-family: "Source Han Sans CN"
+}
+
+.itemDiv4 {
+    width: 297px;
+    height: 517px;
+    position: relative;
+    left: 54px;
+}
+
+.border-left4 {
+    width: 297px;
+    height: 0px;
+    border-left: 4px solid #1496ed;
+    position: absolute;
+    -webkit-transition: 1.5s;
+    -o-transition: 1.5s;
+    -moz-transition: 1.5s;
+    transition: 1.5s;
+}
+
+.labelStyle4 {
+    width: 0%;
+    height: 78px;
+    position: absolute;
+    bottom: 0px;
+    background-image: -webkit-gradient(linear, left top, right top, from(#1496ed), to(#2de3fe));
+    background-image: -webkit-linear-gradient(left, #1496ed, #2de3fe);
+    background-image: -moz-linear-gradient(left, #1496ed, #2de3fe);
+    background-image: -o-linear-gradient(left, #1496ed, #2de3fe);
+    background-image: linear-gradient(to right, #1496ed, #2de3fe);
+    opacity: 0;
+    z-index: 88;
+    overflow: hidden;
+    -webkit-transition: 0.5s;
+    -o-transition: 0.5s;
+    -moz-transition: 0.5s;
+    transition: 0.5s;
+}
+
+.labeltext04-01 {
+    font-size: 16pt;
+    text-align: left;
+    color: #fff;
+    line-height: 50px;
+    white-space: nowrap;
+    margin-left: 10px;
+    font-family: "Source Han Sans CN";
+}
+
+.labeltext04-02 {
+    font-size: 10pt;
+    text-align: left;
+    color: #fff;
+    line-height: 5px;
+    white-space: nowrap;
+    margin-left: 10px;
+    font-family: "Source Han Sans CN"
+}
+
+
+/* **************查看更多按钮******************* */
+.lookMore {
+    width: 298px;
+    height: 67px;
+    border: 2px solid #2daefe;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 100px;
+    color: #2daefe;
+}
+
+.lookMore-Text {
+    font-size: 16pt;
+    color: #2daefe;
+    line-height: 67px;
+    font-family: "Source Han Sans CN";
+}

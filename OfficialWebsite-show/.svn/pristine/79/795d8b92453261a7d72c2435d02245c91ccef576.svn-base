@@ -1,0 +1,60 @@
+@font-face {
+    font-family: 'SourceHanSansCN-ExtraLight';
+    src: url('../typeface/SourceHanSansCN-ExtraLight.otf') format('woff'),
+}
+
+.footerText {
+    /* position: absolute; */
+    background-color: #1a1919;
+    /* width: 100%;
+    min-width: 1280px; */
+    /* height: 195px; */
+    font-size: 10pt;
+    color: #666;
+    /* padding: 20px 0; */
+    margin-top: 67px;
+    font-weight: lighter;
+    font-family: 'SourceHanSansCN-ExtraLight';
+}
+
+.footerDiv {
+    display: flex;
+    width: 830px;
+    height: 195px;
+    margin: auto;
+}
+
+.footerImg {
+    width: 9%;
+    height: 100%;
+    position: relative;
+}
+
+.footerImg img {
+    display: block;
+    position: absolute;
+    top: 30%;
+}
+
+.text-align {
+    width: 50%;
+    height: 100%;
+    text-align: left;
+    color: #fff;
+    margin-left: 90px;
+    position: relative;
+}
+
+.text-height {
+    white-space: nowrap;
+    margin: auto;
+    line-height: 25px;
+    position: absolute;
+    top: 21%;
+}
+
+.text-height>p {
+    color: #9f9f9f;
+    font-size: 10pt;
+    font-family: "SourceHanSansCN-ExtraLight"
+}
