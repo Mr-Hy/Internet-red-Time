@@ -1,3 +1,0 @@
-Recently updated (since 2019-10-09)
-  2019-10-13
-    [32m→[39m element-ui@2.12.0 › async-validator@1.8.5 › babel-runtime@6.26.0 › core-js@^2.4.0([32m2.6.10[39m) [90m(22:41:47)[39m
